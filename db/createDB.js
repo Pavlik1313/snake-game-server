@@ -5,7 +5,11 @@ const pool = new Pool({
     user: configDB.user,
     password: configDB.password,
     host: configDB.host,
-    port: configDB.port
+    port: configDB.port,
+    max: 50,
+    min: 0,
+    idle: 20000,
+    acquire: 20000
 })
 const createDB = async () => {
     await pool.query(`DROP DATABASE IF EXISTS ${configDB.database}`);
