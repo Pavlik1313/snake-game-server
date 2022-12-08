@@ -9,10 +9,6 @@ const start = () => {
     app.use(express.json());
 
     app.use(cors({origin:'*'}));
-    app.use((req, res, next)=>{
-        console.log(`${req.method} on ${req.url}`);
-        next();
-    })
     app.use(recordsRouter);
     app.listen(PORT, () => {
         console.log(`Server started. http://localhost:${PORT}`)
