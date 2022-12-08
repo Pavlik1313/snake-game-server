@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors'
 import recordsRouter from "./routers/recordsRouter.js";
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.SERVER_PORT || 3030;
 const app = express();
 
 const start = () => {
@@ -13,6 +13,7 @@ const start = () => {
     app.listen(PORT, () => {
         console.log(`Server started. http://localhost:${PORT}`)
     })
+
 }
 
 start();
