@@ -10,8 +10,14 @@ class RecordsController {
         return res.send(await dbManager.getBestScoreByName(name));
     }
     async getLeaders (req, res){
-        return res.send(await dbManager.getLeaders());
-    }
+        console.log('send request to DB')
+        dbManager.getLeaders().then((result)=>{
+            console.log(`get response from DB`);
+            return res.send(result);
+        })
+        };
+
+
 }
 
 
